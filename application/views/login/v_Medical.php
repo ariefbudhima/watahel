@@ -19,6 +19,9 @@ $this->load->view('template/navbar');
         if($this->session->userdata('username') == 'admin'){
             $this->load->view('template/dashboard/laborat_menu');
         }
+        elseif ($this->session->userdata('username') == 'radio') {
+            $this->load->view('template/dashboard/radio_menu');
+        }
         ?>
         <!-- #Menu -->
         <!-- Footer -->
@@ -29,7 +32,7 @@ $this->load->view('template/navbar');
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>DASHBOARD for laborat</h2>
+            <h2>DASHBOARD for Medical</h2>
 
         </div>
 

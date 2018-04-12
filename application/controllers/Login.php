@@ -11,6 +11,7 @@ class login extends MY_Controller {
 
 		$this->load->model('M_Laborat');
 		$this->load->model('M_radiologi');
+		$this->load->model('M_Medical');
 		$this->load->model('M_User');
 		// load semua model untuk dilakukan pengecekan pada database
 	}
@@ -47,6 +48,11 @@ class login extends MY_Controller {
 					$nama = $role['nama'];
 					$this->session->set_userdata('nama',$nama);
 				}
+				else if ($role['jabatan']=='medical'){
+					$this->session->set_userdata('akses', 'Medical');
+					$nama = $role['nama'];
+					$this->session->set_userdata('nama',$nama);
+				}
 				redirect('Login/Dashboard');
 			}
 			// if ($this->session->set_userdata('masuk') == TRUE) {
@@ -66,11 +72,16 @@ class login extends MY_Controller {
 					$data = array(
 						'nama' => $query->num_rows()
 					);
-	        if($this->session->userdata('username')=="admin"){
+	        if($this->session->userdata('akses')=="Laborat"){
 	            $this->dashboard_page('login/v_Laborat', $data);
 	        }else if($this->session->userdata('akses')=="Radio"){
 	            $this->dashboard_page('login/v_Radio', $data);
+	        }else if($this->session->userdata('akses')=="Medical"){
+		        	$this->dashboard_page('login/v_Medical', $data);
 	        }
+					// else {
+					// 	redirect('/', 'refresh');
+					// }
 	    }
 	// public function Laborat(){
 	// 	$query = $this->M_Laborat->getName();

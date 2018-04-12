@@ -2,7 +2,7 @@
   /**
    *
    */
-  class M_radiologi extends CI_Model
+  class M_Medical extends CI_Model
   {
 
     function can_login($uname, $pwd)
@@ -11,7 +11,7 @@
       $this->db->from('admin');
       $this->db->where('username', $u);
       $this->db->where('password', $p);
-      $this->db->where('jabatan', 'radiologi');
+      $this->db->where('jabatan', 'Medical');
       $query = $this->db->get();
       return $query;
     }
