@@ -8,7 +8,7 @@
             </a>
         </li>
         <li>
-            <a href="javascript:void(0);" class="menu-toggle">
+            <a href="javascript:void(0);" >
                 <i class="material-icons">local_library</i>
                 <span>Kelas</span>
             </a>
