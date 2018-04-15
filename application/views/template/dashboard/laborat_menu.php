@@ -8,15 +8,10 @@
             </a>
         </li>
         <li>
-            <a href="javascript:void(0);" >
+            <a href="<?php echo base_url(); ?>Laborat/tambahPasien" >
                 <i class="material-icons">local_library</i>
-                <span>Kelas</span>
-            </a>
-            <ul class="ml-menu">
-                <li>
-                    <a href="<?php echo base_url();?>Kelas">Data Kelas</a>
-                </li>
-            </ul>
+                <span>Tambah Pasien</span>
+              </a>
         </li>
         <li>
             <a href="javascript:void(0);" class="menu-toggle">

@@ -24,6 +24,11 @@ class MY_Controller extends CI_Controller
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('templates/dashboard/index', $data);
     }
+
+    function menu_Laborat($content, $data = NULL){
+      $data['content'] = $this->load->view($content, $data, TRUE);
+      $this->load->view('templates/dashboard/index', $data);
+    }
 }
 
 

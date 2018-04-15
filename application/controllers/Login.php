@@ -69,15 +69,17 @@ class login extends MY_Controller {
 	            redirect('/','refresh');
 	        }
 					$query = $this->M_Laborat->getName();
+					$pas = $this->M_Laborat->get_pasien();
 					$data = array(
-						'nama' => $query->num_rows()
+						'nama' => $query->num_rows(),
+						'pasien' => $pas->num_rows()
 					);
 	        if($this->session->userdata('akses')=="Laborat"){
-	            $this->dashboard_page('login/v_Laborat', $data);
+	            $this->dashboard_page('login/v_Dashboard', $data);
 	        }else if($this->session->userdata('akses')=="Radio"){
-	            $this->dashboard_page('login/v_Radio', $data);
+	            $this->dashboard_page('login/v_Dashboard', $data);
 	        }else if($this->session->userdata('akses')=="Medical"){
-		        	$this->dashboard_page('login/v_Medical', $data);
+		        	$this->dashboard_page('login/v_Dashboard', $data);
 	        }
 					// else {
 					// 	redirect('/', 'refresh');

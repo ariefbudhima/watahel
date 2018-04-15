@@ -34,9 +34,9 @@
     <link href="<?php echo base_url(); ?>assets/css/themes/all-themes.css" rel="stylesheet" />
 
 </head>
-<?php if($this->session->userdata('akses') == 'Admin'){?>
+<?php if($this->session->userdata('akses') == 'Laborat'){?>
 <body class="theme-blue-grey">
-<?php   } else if($this->session->userdata('akses') == 'Tutor'){ ?>
+<?php   } else if($this->session->userdata('akses') == 'Radio'){ ?>
 <body class="theme-cyan">
 <?php   }?>
 <?php

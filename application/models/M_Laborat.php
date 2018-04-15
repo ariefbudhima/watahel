@@ -20,6 +20,18 @@
       $query = $this->db->get('admin');
       return $query;
     }
+
+    function get_pasien(){
+      $this->db->select('*');
+      $this->db->from('pasien');
+      $kue = $this->db->get();
+      return $kue;
+    }
+
+    function addPas($data){
+      $this->db->insert('pasien', $data);
+    }
+
   }
 
  ?>
