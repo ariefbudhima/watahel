@@ -39,6 +39,11 @@ class Laborat extends MY_Controller
   }
 
 public function addPas(){
+  // $this->form_validation->set_rules('fullname', 'Nama Lengkap', 'required');
+  // $this->form_validation->set_rules('umur', 'Usia', 'required');
+  // $this->form_validation->set_rules('gender', 'Jenis Kelamin', 'required');
+  // $this->form_validation->set_rules('alamat', 'Alamat', 'required');
+  // $this->form_validation->set_rules('noTelp', 'No Telepon', 'required');
   $Id = $this->M_Laborat->get_pasien();
   if ($Id->num_rows() > 0) {
     $Id = $Id->num_rows();
@@ -56,6 +61,35 @@ public function addPas(){
   $this->M_Laborat->addPas($data);
   redirect('login/dashboard');
 }
+
+  public function dataPasien(){
+    if ($this->session->userdata('masuk') == TRUE) {
+      $role = $this->session->userdata('akses');
+			if ($role == 'Laborat'){
+        $query = $this->M_Laborat->get_pasien();
+        $data['pasien'] = $query->result();
+        $this->menu_Laborat('menu/dataPasien', $data);
+      }
+		}
+    else {
+      redirect(base_url());
+    }
+  }
+
+  public function dataPemeriksaan(){
+    if ($this->session->userdata('masuk') == TRUE) {
+      $role = $this->session->userdata('akses');
+			if ($role == 'Laborat'){
+        $query = $this->M_Laborat->get_laborat();
+        $data['pasien'] = $query->result();
+        $this->menu_Laborat('menu/dataLaborat', $data);
+      }
+		}
+    else {
+      redirect(base_url());
+    }
+
+  }
 
 }
 

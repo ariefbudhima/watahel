@@ -42,11 +42,11 @@ $this->load->view('template/navbar');
          ?>
         <form class="" action="<?php echo base_url().'Laborat/addPas' ?>" method="post">
           <div class="col-lg-3">
-            <input type="text" name="fullname" placeholder="Nama Lengkap" class="tambahp col-lg-9" style="margin-bottom: 10px;"> <br>
-            <input type="text" name="umur" placeholder="Usia" class="tambahp col-lg-9" style="margin-bottom: 10px;"> <br>
-            <input type="text" name="gender" placeholder="Jenis Kelamin" class="tambahp col-lg-9" style="margin-bottom: 10px;"> <br>
-            <input type="text" name="alamat" placeholder="Alamat" class="tambahp col-lg-9" style="margin-bottom: 10px;"> <br>
-            <input type="text" name="noTelp" placeholder="No Telepon" class="tambahp col-lg-9" style="margin-bottom: 10px;"> <br>
+            <input type="text" name="fullname" placeholder="Nama Lengkap" required class="tambahp col-lg-9" style="margin-bottom: 10px;"> <br>
+            <input type="text" name="umur" placeholder="Usia" required class="tambahp col-lg-9" style="margin-bottom: 10px;"> <br>
+            <input type="text" name="gender" placeholder="Jenis Kelamin" required class="tambahp col-lg-9" style="margin-bottom: 10px;"> <br>
+            <input type="text" name="alamat" placeholder="Alamat" required class="tambahp col-lg-9" style="margin-bottom: 10px;"> <br>
+            <input type="text" name="noTelp" placeholder="No Telepon" required class="tambahp col-lg-9" style="margin-bottom: 10px;"> <br>
           </div>
           <div class="col-lg-3">
             <!-- <input type="text" name="umur" placeholder="Usia" class="form_control col-lg-9"> -->

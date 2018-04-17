@@ -1,69 +1,41 @@
-<div class="block-header">
-    <h2>DASHBOARD for laborat</h2>
-
-</div>
-
-<!-- Widgets -->
-<div class="#">
-  <?php
-  // $lol = $pas->num_rows();
-  echo "jumlah pasien ",$pasien;
-
-  ?>
-</div>
-<!-- #END# Widgets -->
-<!-- With Captions -->
-<div class="row clearfix">
-    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <div class="card">
-            <div class="header">
-                <h2>GALLERY</h2>
-                <ul class="header-dropdown m-r--5">
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="material-icons">more_vert</i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);">Action</a></li>
-                            <li><a href="javascript:void(0);">Another action</a></li>
-                            <li><a href="javascript:void(0);">Something else here</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="body">
-                <div id="carousel-example-generic_2" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic_2" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic_2" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic_2" data-slide-to="2"></li>
-                    </ol>
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="../images/image-gallery/quotes/1.jpg" />
-                        </div>
-                        <div class="item">
-                            <img src="../images/image-gallery/quotes/2.jpg" />
-                        </div>
-                        <div class="item">
-                            <img src="../images/image-gallery/quotes/3.jpg" />
-                        </div>
+<div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            DATA KELAS
+                        </h2>
                     </div>
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-example-generic_2" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic_2" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    <div class="body">
+                      <?php echo $totalpas ?>
+                      <?php echo strtoupper($this->session->userdata('Id')); ?>
+                        <!-- <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                            <tr>
+                                <th>Id Pasien</th>
+                                <th>Nama Pasien</th>
+                                <th>Umur</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Alamat</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                  <?php
+                            foreach ($pasien as $obj) {
+                                echo "<tr>";
+                                echo "<td>$obj->idPasien</td>";
+                                echo "<td>$obj->nmPasien</td>";
+                                echo "<td>$obj->umur</td>";
+                                echo "<td>$obj->gender</td>";
+                                echo "<td>$obj->Alamat</td>";
+                            }
+                            ?>
+                            </tbody>
+                        </table> -->
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- #END# Basic Examples -->
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
-</div>

@@ -32,6 +32,13 @@
       $this->db->insert('pasien', $data);
     }
 
+    function get_laborat(){
+      $this->db->select('*');
+      $this->db->from('laboratorium');
+      $kue = $this->db->get();
+      return $kue;
+    }
+
   }
 
  ?>

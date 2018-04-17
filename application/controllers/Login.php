@@ -34,7 +34,9 @@ class login extends MY_Controller {
 			$pwd = $this->input->post('password');
 			// var_dump($this->M_Laborat->can_login($uname, $pwd));
 			$cek = $this->M_User->can_login($uname, $pwd);
+			// $Idd= $cek->row_array();
 			if ($cek->num_rows() > 0) {
+				// $Id = $Idd['Id'];
 				$this->session->set_userdata('masuk',TRUE);
 				$this->session->set_userdata('username',$uname);
 				$role = $cek->row_array();
@@ -42,6 +44,8 @@ class login extends MY_Controller {
 					$this->session->set_userdata('akses', 'Laborat');
 					$nama = $role['nama'];
 					$this->session->set_userdata('nama',$nama);
+					$Id = $role['Id'];
+					$this->session->set_userdata('Id',$Id);
 				}
 				else if ($role['jabatan']=='radiologi') {
 					$this->session->set_userdata('akses', 'Radio');
@@ -68,11 +72,14 @@ class login extends MY_Controller {
 	        if (!$this->session->userdata('masuk')){
 	            redirect('/','refresh');
 	        }
+					// $Idd = $this->M_User->can_login($uname, $pwd);
 					$query = $this->M_Laborat->getName();
 					$pas = $this->M_Laborat->get_pasien();
 					$data = array(
+						// 'Idd' => $Idd->result(),
 						'nama' => $query->num_rows(),
-						'pasien' => $pas->num_rows()
+						'pasien' => $pas->result(),
+						'totalpas' => $pas->num_rows()
 					);
 	        if($this->session->userdata('akses')=="Laborat"){
 	            $this->dashboard_page('login/v_Dashboard', $data);

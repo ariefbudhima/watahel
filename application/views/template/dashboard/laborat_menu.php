@@ -8,22 +8,34 @@
             </a>
         </li>
         <li>
-            <a href="<?php echo base_url(); ?>Laborat/tambahPasien" >
+          <a href="javascript:void(0);" class="menu-toggle">
+              <i class="material-icons">local_library</i>
+              <span>Pasien</span>
+          </a>
+          <ul class="ml-menu">
+              <li>
+                  <a href="<?php echo base_url();?>Laborat/dataPasien">Data Pasien</a>
+              </li>
+              <li>
+                  <a href="<?php echo base_url();?>Laborat/tambahPasien">Tambah Pasien</a>
+              </li>
+          </ul>
+            <!-- <a href="<?php echo base_url(); ?>Laborat/tambahPasien" >
                 <i class="material-icons">local_library</i>
                 <span>Tambah Pasien</span>
-              </a>
+              </a> -->
         </li>
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">assignment</i>
-                <span>Presensi</span>
+                <span>Pemeriksaan</span>
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="<?php echo base_url();?>Presensi">Data Presensi</a>
+                    <a href="<?php echo base_url();?>Laborat/dataPemeriksaan">Data Pemeriksaan</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>Presensi/tambah">Tambah Presensi</a>
+                    <a href="<?php echo base_url();?>Presensi/tambah">Tambah Pemeriksaan</a>
                 </li>
             </ul>
         </li>
