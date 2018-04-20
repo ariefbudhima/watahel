@@ -39,6 +39,13 @@
       return $kue;
     }
 
+    function getdatapemeriksaan(){
+      $this->db->select('p.nmPasien, p.gender, l.jnsPemeriksaan, l.nilaiRujukan, l.satuan, d.nmDokter');
+      $this->db->from('pasien p, laboratorium l, dokter d');
+      $this->db->where('p.idPasien = l.idPasien and d.idDokter = l.idDokter');
+      $kue = $this->db->get();
+      return $kue;
+    }
   }
 
  ?>

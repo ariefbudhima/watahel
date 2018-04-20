@@ -80,7 +80,7 @@ public function addPas(){
     if ($this->session->userdata('masuk') == TRUE) {
       $role = $this->session->userdata('akses');
 			if ($role == 'Laborat'){
-        $query = $this->M_Laborat->get_laborat();
+        $query = $this->M_Laborat->getdatapemeriksaan();
         $data['pasien'] = $query->result();
         $this->menu_Laborat('menu/dataLaborat', $data);
       }

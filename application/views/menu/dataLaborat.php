@@ -46,24 +46,24 @@ $this->load->view('template/navbar');
                           <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                               <thead>
                               <tr>
-                                  <th>Id Lab</th>
-                                  <th>Jenis Pemeriksaan</th>
+                                  <th>Nama Pasien</th>
+                                  <th>Jenis Kelamin</th>
+                                  <th>jenis Pemeriksaan</th>
                                   <th>Nilai Rujukan</th>
                                   <th>Satuan</th>
-                                  <th>Id Pasien</th>
-                                  <th>Id Dokter</th>
+                                  <th>Nama Dokter</th>
                               </tr>
                               </thead>
                               <tbody>
                                     <?php
                               foreach ($pasien as $obj) {
                                   echo "<tr>";
-                                  echo "<td>$obj->idLab</td>";
+                                  echo "<td>$obj->nmPasien</td>";
+                                  echo "<td>$obj->gender</td>";
                                   echo "<td>$obj->jnsPemeriksaan</td>";
                                   echo "<td>$obj->nilaiRujukan</td>";
                                   echo "<td>$obj->satuan</td>";
-                                  echo "<td>$obj->idPasien</td>";
-                                  echo "<td>$obj->idDokter</td>";
+                                  echo "<td>$obj->nmDokter</td>";
                               }
                               ?>
                               </tbody>
